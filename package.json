@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "test:k6:load": "k6 run k6/load-test.js",
+    "test:k6:stress": "k6 run k6/stress-test.js"
   },
   "keywords": [],
   "author": "",
