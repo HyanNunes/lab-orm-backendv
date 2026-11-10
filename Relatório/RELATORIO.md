@@ -1,12 +1,8 @@
 # Relatório de Execução: ORM e Persistência com Prisma (JavaScript)
 **Atividade Prática 1**
 
-## 1. Objetivo
-Demonstrar a configuração de um banco de dados relacional via SQLite, mapeamento objeto-relacional (ORM) com Prisma, criação de relacionamentos 1:N com exclusão em cascata, e execução de operações CRUD completas através de script em JavaScript puro (`crud.js`).
 
----
-
-## 2. Evidências de Execução do Script (`node crud.js`)
+## Evidências de Execução do Script (`node crud.js`)
 
 Abaixo encontra-se o registro da execução bem-sucedida do script na raiz do projeto:
 
@@ -61,3 +57,24 @@ Tarefa Atualizada: {
   createdAt: 2026-11-04T21:32:37.101Z
 }
 Usuário e tarefas associadas removidos via cascata.
+
+## Evidências de Execução do Script (`node audit.js`)
+
+Abaixo encontra-se o registro da execução bem-sucedida do script na raiz do projeto:
+
+### Comando Executado:
+
+PS D:\Nassau\Projetos\lab-orm-backendv> node audit.js
+Usuário registrado com sucesso (payload seguro): {
+  id: 'e39d8d72-3c7a-492f-8873-2d459038d754',
+  name: 'Carlos Silveira',
+  email: 'carlos@sec.org',
+  createdAt: 2026-11-10T00:58:49.681Z
+}
+Registro Bruto no Banco de Dados: {
+  email: 'carlos@sec.org',
+  password: '$2b$10$/tB2YEtcy7mYun5Vs1gIJeNZpSx.s5l6TxzX9g76aHuiRRhn6jozi'
+}
+Prefixo Bcrypt detectado ($2b$): true
+Tamanho total da string hash: 60
+Autenticação bem-sucedida: carlos@sec.org
