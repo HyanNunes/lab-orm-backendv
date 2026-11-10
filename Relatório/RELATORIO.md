@@ -4,9 +4,12 @@
 
 ## Evidências de Execução do Script (`node crud.js`)
 
-Abaixo encontra-se o registro da execução bem-sucedida do script na raiz do projeto:
+![Registro da criação do banco de dados no prisma studio](./imagens/Registro%20prisma%20studio.png)
+![Registro BD usuário](./imagens/Registro%20BD%20User.png)
+![Registro BD tarefas](./imagens/Registro%20BD%20Tasks.png)
 
-### Comando Executado:
+### Abaixo o registro da execução bem-sucedida do script na raiz do projeto:
+
 PS D:\Nassau\Projetos\lab-orm-backendv> node crud.js
 Usuário Criado: {
   id: '2d6fe879-1cc7-48b3-af2a-c7e9c618f97a',
@@ -58,11 +61,17 @@ Tarefa Atualizada: {
 }
 Usuário e tarefas associadas removidos via cascata.
 
+
+# Criptografia Armazenamento Seguro com JavaScript
+**Atividade Prática 2:** 
+
 ## Evidências de Execução do Script (`node audit.js`)
+Execução demonstrativa de teste de autenticação validando casos de sucesso e
+de falha com mensagens genéricas.
+![Validação: caso de sucesso](./imagens/credenciais%20válidas.png)
+![Validação: caso de falha](./imagens/credenciais%20inválidas.png)
 
-Abaixo encontra-se o registro da execução bem-sucedida do script na raiz do projeto:
-
-### Comando Executado:
+### Abaixo o registro da execução bem-sucedida do script na raiz do projeto:
 
 PS D:\Nassau\Projetos\lab-orm-backendv> node audit.js
 Usuário registrado com sucesso (payload seguro): {
@@ -78,3 +87,5 @@ Registro Bruto no Banco de Dados: {
 Prefixo Bcrypt detectado ($2b$): true
 Tamanho total da string hash: 60
 Autenticação bem-sucedida: carlos@sec.org
+
+![Comprovação visual(print do prisma studio)](./imagens/BD%20c%20bcrypt.png)
