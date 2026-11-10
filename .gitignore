@@ -2,5 +2,4 @@ node_modules/
 prisma/*.db
 prisma/*.db-journal
 .env
-INSTRUCOES_ENTREGA.md
-GUIA_K6.md
+
