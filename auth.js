@@ -20,3 +20,21 @@ async function registerUser(name, email, plainPassword) {
     return userWithoutPassword;
 }
 module.exports = { registerUser };
+
+async function authenticateUser(email, plainPassword) {
+    const user = await prisma.user.findUnique({
+        where: { email }
+    });
+    // Mensagem genérica para prevenir enumeração de contas
+    if (!user) {
+        throw new Error('Credenciais inválidas.');
+    }
+    // Comparação assíncrona segura em tempo constante
+    const isPasswordValid = await bcrypt.compare(plainPassword, user.password);
+    if (!isPasswordValid) {
+        throw new Error('Credenciais inválidas.');
+    }
+    const { password, ...userWithoutPassword } = user;
+    return userWithoutPassword;
+}
+module.exports = { registerUser, authenticateUser };
