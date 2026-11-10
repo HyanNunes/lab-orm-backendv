@@ -2,9 +2,9 @@ const { PrismaClient } = require('@prisma/client');
 const { registerUser, authenticateUser } = require('./auth');
 const prisma = new PrismaClient();
 async function runSecurityAudit() {
-    /*const registered = await registerUser('Carlos Silveira', 'carlos@sec.org',
+    const registered = await registerUser('Carlos Silveira', 'carlos@sec.org',
         'SuperSecretPass123!');
-    console.log('Usuário registrado com sucesso (payload seguro):', registered);*/
+    console.log('Usuário registrado com sucesso (payload seguro):', registered);
     // Inspeção direta no banco via query SQL pura
     const rawRecords = await prisma.$queryRaw`SELECT email, password FROM User WHERE email = 'carlos@sec.org'`;
     const hash = rawRecords[0].password;
